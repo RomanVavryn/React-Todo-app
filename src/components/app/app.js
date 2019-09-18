@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import './app.css';
 
 export default class App extends Component {
     state = {
@@ -7,7 +8,7 @@ export default class App extends Component {
 
     render() {
         return (
-            <div>
+            <div className='container'>
                 container
             </div>
         )
