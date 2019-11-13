@@ -1,9 +1,14 @@
 import React from 'react';
+import TodoItem from '../todo-item';
 
-function TodoList (props) {
+
+function TodoList(props) {
     console.log(props)
     return (
-        <div>hellow </div>
+        <ul>
+            <TodoItem />
+            <TodoItem />
+        </ul>
     )
 }
 
