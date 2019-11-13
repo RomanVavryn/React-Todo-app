@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
 import './app.css';
 
+import AddInputTasks from '../add-input-task';
+
 export default class App extends Component {
     state = {
-        todos: []
+        todos: [],
+    }
+
+    addNewTask = (obj) => {
+        this.setState({todos: [...this.state.todos, obj]})
     }
 
     render() {
         return (
             <div className='container'>
-                container
+                <AddInputTasks addNewTask={this.addNewTask} />
             </div>
         )
     }

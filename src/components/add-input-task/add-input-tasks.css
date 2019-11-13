@@ -1,0 +1,15 @@
+.input-container {
+   display: flex;
+   justify-content: center;
+}
+
+.input-task {
+    outline: none;
+    width: 225px;
+    height: 25px;
+    border: 1px dashed black;
+}
+
+.addBtn {
+    margin: 0 10px;
+}
