@@ -28,6 +28,7 @@ export default class App extends Component {
                 if (obj.id === item.id) {
                     obj.done = !obj.done;
                 } 
+                return obj;
             });
             return {
                 todos: list,
