@@ -11,6 +11,10 @@ export default class App extends Component {
 
     id = 0;
     addNewTask = (text) => {
+        
+        if (text.length < 4) {
+            return;
+        }
 
         let task = {
             task: text,
@@ -27,7 +31,7 @@ export default class App extends Component {
             const list = state.todos.map((obj) => {
                 if (obj.id === item.id) {
                     obj.done = !obj.done;
-                } 
+                }
                 return obj;
             });
             return {
