@@ -23,8 +23,11 @@ export default class App extends Component {
     }
 
     TaskDone = (id) => {
-        this.state.todos[id].done = !this.state.todos[id].done;
-        this.setState({ todos: this.state.todos })
+        let stateCopy = JSON.parse(JSON.stringify(this.state.todos))
+        stateCopy[id].done = !this.state.todos[id].done;
+        this.setState({
+            todos: stateCopy
+        })
     }
 
     render() {
