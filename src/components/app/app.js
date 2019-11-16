@@ -22,19 +22,33 @@ export default class App extends Component {
         this.id++;
     }
 
-    TaskDone = (id) => {
-        let stateCopy = JSON.parse(JSON.stringify(this.state.todos))
-        stateCopy[id].done = !this.state.todos[id].done;
-        this.setState({
-            todos: stateCopy
-        })
-    }
+    TaskDone = (item) => {
+        this.setState(state => {
+            const list = state.todos.map((obj) => {
+                if (obj.id === item.id) {
+                    obj.done = !obj.done;
+                } 
+            });
+            return {
+                todos: list,
+            };
+        });
+    };
+
+    DeleteTask = (id) => {
+        this.setState(state => {
+            const list = state.todos.filter(item => item.id !== id);
+            return {
+                todos: list,
+            };
+        });
+    };
 
     render() {
         return (
             <div className='container'>
                 <AddInputTasks addNewTask={this.addNewTask} />
-                <TodoList todos={this.state.todos} TaskDone={this.TaskDone} />
+                <TodoList todos={this.state.todos} TaskDone={this.TaskDone} DeleteTask={this.DeleteTask} />
             </div>
         )
     }
