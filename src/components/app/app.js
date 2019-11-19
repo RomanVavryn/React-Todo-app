@@ -11,11 +11,7 @@ export default class App extends Component {
 
     id = 0;
     addNewTask = (text) => {
-        
-        if (text.length < 4) {
-            return;
-        }
-
+    
         let task = {
             task: text,
             done: false,
