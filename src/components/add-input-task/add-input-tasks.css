@@ -1,6 +1,6 @@
 .input-container {
-   display: flex;
-   justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .input-task {
@@ -8,6 +8,7 @@
     width: 225px;
     height: 25px;
     border: 1px solid black;
+    padding: 0 5px;
 }
 
 .addBtn {
@@ -17,4 +18,14 @@
     background-color: white;
     border: 1px solid #000;
     color: #000;
+}
+
+.addBtn:hover {
+    background-color: green;
+    color: #fff;
+}
+
+.addBtn:disabled {
+    background-color: gray;
+    color: #fff;
 }
