@@ -12,6 +12,11 @@ export default class AddInputTasks extends Component {
 
     addHendl = (event) => {
         if (event.key === 'Enter') {
+
+            if (this.state.taksText.length < 4) {
+                return;
+            }
+
             this.props.addNewTask(this.state.taksText)
             this.setState({taksText: ''})
         }
@@ -28,8 +33,8 @@ export default class AddInputTasks extends Component {
 
         return (
             <div className='input-container'>
-                <input value={taksText} onChange={this.hendlChangeTask} onKeyPress={this.addHendl} className='input-task' />
-                <button className='addBtn' onClick={() => {addNewTask(taksText); this.textToNull();}}> Add </button>
+                <input value={taksText}  onChange={this.hendlChangeTask} onKeyPress={this.addHendl} className='input-task' />
+                <button className='addBtn' disabled={this.state.taksText.length < 4} onClick={() => {addNewTask(taksText); this.textToNull();}}> + </button>
             </div>
         )
     }
