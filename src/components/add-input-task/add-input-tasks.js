@@ -33,7 +33,7 @@ export default class AddInputTasks extends Component {
 
         return (
             <div className='input-container'>
-                <input value={taksText}  onChange={this.hendlChangeTask} onKeyPress={this.addHendl} className='input-task' />
+                <input value={taksText} disabled={this.props.taskCount > 14} onChange={this.hendlChangeTask} onKeyPress={this.addHendl} className='input-task' />
                 <button className='addBtn' disabled={this.state.taksText.length < 4} onClick={() => {addNewTask(taksText); this.textToNull();}}> + </button>
             </div>
         )

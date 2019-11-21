@@ -48,7 +48,7 @@ export default class App extends Component {
     render() {
         return (
             <div className='container'>
-                <AddInputTasks addNewTask={this.addNewTask} />
+                <AddInputTasks addNewTask={this.addNewTask} taskCount={this.state.todos.length} />
                 <TodoList todos={this.state.todos} TaskDone={this.TaskDone} DeleteTask={this.DeleteTask} />
             </div>
         )
