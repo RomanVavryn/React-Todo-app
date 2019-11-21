@@ -6,22 +6,26 @@ export default class AddInputTasks extends Component {
         taksText: ''
     }
 
+    // change text in input 
     hendlChangeTask = (e) => {
         this.setState({ taksText: e.target.value })
     }
 
+    // when press Enter, call add task method
     addHendl = (event) => {
         if (event.key === 'Enter') {
-
+            // task length validation 
             if (this.state.taksText.length < 4) {
                 return;
             }
 
             this.props.addNewTask(this.state.taksText)
+            // reset input when task added
             this.setState({taksText: ''})
         }
     }
 
+    // reset input when task added
     textToNull = () => {
         this.setState({taksText: ''})
     }

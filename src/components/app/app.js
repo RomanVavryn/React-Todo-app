@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './app.css';
 
+// components 
 import AddInputTasks from '../add-input-task';
 import TodoList from '../todo-list';
 
@@ -9,7 +10,9 @@ export default class App extends Component {
         todos: [],
     }
 
+    // unique id for task
     id = 0;
+    // add task method
     addNewTask = (text) => {
     
         let task = {
@@ -22,6 +25,7 @@ export default class App extends Component {
         this.id++;
     }
 
+    // task change state to done
     TaskDone = (item) => {
         this.setState(state => {
             const list = state.todos.map((obj) => {
@@ -36,8 +40,10 @@ export default class App extends Component {
         });
     };
 
+    // delete task
     DeleteTask = (id) => {
         this.setState(state => {
+            // find task with same id
             const list = state.todos.filter(item => item.id !== id);
             return {
                 todos: list,
